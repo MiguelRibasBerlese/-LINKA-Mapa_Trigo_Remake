@@ -1,0 +1,45 @@
+[
+  {
+    "id": "br-sp",
+    "estado": "São Paulo",
+    "representantes": [
+      { "nome": "Eduardo Hara", "cidade": "Araçatuba - SP", "telefone": "18 99601 6371" },
+      { "nome": "Sylvio Di Jacintho", "cidade": "São José do Rio Preto - SP", "telefone": "17 99772 6801" },
+      { "nome": "Thiago Guzella", "cidade": "Botucatu - SP", "telefone": "19 99753 7102" },
+      { "nome": "Marcelo Gallerani Peres", "cidade": "Tabapuã - SP", "telefone": "17 99741 2462" }
+    ]
+  },
+  {
+    "id": "br-ms",
+    "estado": "Mato Grosso do Sul",
+    "representantes": [
+      { "nome": "Everton Pereira", "cidade": "Montes Claros - MS", "telefone": "38 99857 7050" },
+      { "nome": "Deomar Carvalho Jr", "cidade": "Inocência - MS", "telefone": "18 99644 4090" },
+      { "nome": "Rafael Vicentini", "cidade": "Três Lagoas - MS", "telefone": "18 99121 7217" },
+      { "nome": "Vinicius Gusmão", "cidade": "Dourados - MS", "telefone": "67 98121 2961" },
+      { "nome": "Wagner Garcia", "cidade": "Campo Grande - MS", "telefone": "67 98121 5996" }
+    ]
+  },
+  {
+    "id": "br-mt",
+    "estado": "Mato Grosso",
+    "representantes": [
+      { "nome": "Eduardo Siroto de Brito", "cidade": "Alta Floresta - MT", "telefone": "66 98436 4137" }
+    ]
+  },
+  {
+    "id": "br-go",
+    "estado": "Goiás",
+    "representantes": [
+      { "nome": "Yuri Carneiro", "cidade": "Goiânia - GO", "telefone": "62 99856 6007" },
+      { "nome": "Wedson Maria Costa Jr.", "cidade": "Uruaçu - GO", "telefone": "62 9 9139 5958" }
+    ]
+  },
+  {
+    "id": "br-al",
+    "estado": "Alagoas",
+    "representantes": [
+      { "nome": "João Cavalcanti", "cidade": "Maceió - AL", "telefone": "82 3142 9805" }
+    ]
+  }
+]

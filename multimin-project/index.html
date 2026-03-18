@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#28407C">
+    <title>Representantes - MULTIMIN® 90</title>
+    <meta name="description" content="Encontre o representante MULTIMIN® 90 mais próximo da sua região. Clique no mapa interativo do Brasil para ver informações de contato.">
+    
+    <!-- Google Fonts - mesmas fontes do original -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon placeholder - substituir pelo real -->
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon"> -->
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- BOTÃO FLUTUANTE WHATSAPP                                   -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <a href="https://wa.me/5511975177592?text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20do%20produto%20Multimin%2090%C2%AE." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       id="btn-whatsapp" 
+       aria-label="Contato via WhatsApp">
+        <!-- Ícone SVG inline do WhatsApp - não depende de biblioteca externa -->
+        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- MENU MOBILE (Nav Drawer)                                   -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <button type="button" class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="navMobile" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="nav-mobile" id="navMobile">
+        <button type="button" class="nav-mobile__close" id="navClose" aria-label="Fechar menu">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+        </button>
+        <ul>
+            <li><a href="#">Microminerais</a></li>
+            <li><a href="#">Stress Oxidativo</a></li>
+            <li><a href="#">Multimin 90® Microminerais Injetáveis</a></li>
+            <li><a href="#">Momentos que importam</a></li>
+            <li><a href="#">Testemunhos</a></li>
+            <li><a href="#" class="active">Representantes</a></li>
+            <li><a href="#">Trabalhos Técnicos</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#" class="btn-orcamento">Orçamento</a></li>
+        </ul>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- HEADER - Duas linhas de navegação                          -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <header class="header" id="header">
+        <!-- Linha 1: Logo + Menu principal -->
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-inner">
+                    <div class="header__logo">
+                        <a href="/" title="Home">
+                            <!-- PLACEHOLDER: Substituir pelo logo real (arquivo oficial da equipe de marketing em assets/images/logo-01.svg) -->
+                            <!-- <img src="assets/images/logo-01.svg" alt="MULTIMIN® 90" class="header__logo-img"> -->
+                            <div class="logo-placeholder">MULTIMIN<sup>®</sup> 90</div>
+                        </a>
+                    </div>
+                    <nav class="header__nav-primary">
+                        <ul>
+                            <li><a href="#">Microminerais</a></li>
+                            <li><a href="#">Stress Oxidativo</a></li>
+                            <li><a href="#">Multimin 90® Microminerais Injetáveis</a></li>
+                            <li><a href="#">Momentos que importam</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Linha 2: Menu secundário -->
+        <div class="header__bottom">
+            <div class="container">
+                <nav class="header__nav-secondary">
+                    <ul>
+                        <li><a href="#">Testemunhos</a></li>
+                        <li><a href="#" class="active">Representantes</a></li>
+                        <li><a href="#">Trabalhos Técnicos</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#" class="btn-orcamento">Orçamento</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- BANNER PARALLAX                                            -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="banner-parallax" id="banner">
+        <!-- PLACEHOLDER: A imagem de fundo será aplicada via CSS (arquivo da campanha em assets/images/bg-representantes.jpg) -->
+        <!-- background-image: url('assets/images/bg-representantes.jpg') -->
+        <div class="banner-parallax__overlay"></div>
+        <div class="banner-parallax__content">
+            <h1>Representantes</h1>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- SEÇÃO PRINCIPAL - MAPA INTERATIVO                          -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="section-map" id="mapa">
+        <div class="container">
+            <div class="section-map__header">
+                <h2>Encontre seu representante mais perto.</h2>
+                <p>Clique no estado para ver mais informações.</p>
+            </div>
+            <div class="section-map__wrapper">
+                <!-- O mapa SVG será injetado aqui via JavaScript -->
+                <div class="map-container" id="mapContainer">
+                    <!-- SVG inline do Brasil - mapa simplificado com IDs por estado -->
+                    <!-- Este é um mapa funcional simplificado. Para produção, substitua pelo SVG completo do amcharts.com/svg-maps -->
+                    <svg id="brazilMap" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                        <!-- REGIÃO NORTE -->
+                        <path id="br-am" class="state" d="M120,120 L280,100 L300,140 L320,200 L280,280 L200,300 L140,260 L100,200 Z" data-name="Amazonas"/>
+                        <path id="br-pa" class="state" d="M300,140 L440,120 L480,180 L460,260 L400,300 L320,280 L280,280 L320,200 Z" data-name="Pará"/>
+                        <path id="br-ac" class="state" d="M60,220 L140,200 L140,260 L100,280 L60,260 Z" data-name="Acre"/>
+                        <path id="br-ro" class="state" d="M140,260 L200,300 L200,360 L160,380 L120,340 L100,280 Z" data-name="Rondônia"/>
+                        <path id="br-rr" class="state" d="M200,40 L260,60 L280,100 L240,120 L200,100 Z" data-name="Roraima"/>
+                        <path id="br-ap" class="state" d="M360,40 L400,60 L420,100 L400,120 L360,100 Z" data-name="Amapá"/>
+                        <path id="br-to" class="state" d="M400,300 L460,260 L480,320 L480,420 L440,440 L400,400 Z" data-name="Tocantins"/>
+                        
+                        <!-- REGIÃO NORDESTE -->
+                        <path id="br-ma" class="state" d="M460,180 L540,160 L580,200 L560,280 L500,300 L460,260 Z" data-name="Maranhão"/>
+                        <path id="br-pi" class="state" d="M540,240 L580,200 L620,240 L620,340 L560,360 L540,300 Z" data-name="Piauí"/>
+                        <path id="br-ce" class="state" d="M620,180 L680,180 L700,220 L680,280 L640,280 L620,240 Z" data-name="Ceará"/>
+                        <path id="br-rn" class="state" d="M700,200 L740,200 L750,230 L720,250 L700,240 Z" data-name="Rio Grande do Norte"/>
+                        <path id="br-pb" class="state" d="M690,260 L740,250 L750,280 L720,290 L690,280 Z" data-name="Paraíba"/>
+                        <path id="br-pe" class="state" d="M670,290 L740,290 L750,320 L720,330 L660,320 Z" data-name="Pernambuco"/>
+                        <path id="br-al" class="state" d="M700,330 L740,330 L750,360 L720,360 Z" data-name="Alagoas"/>
+                        <path id="br-se" class="state" d="M690,360 L720,360 L720,390 L690,380 Z" data-name="Sergipe"/>
+                        <path id="br-ba" class="state" d="M560,340 L660,320 L690,380 L680,480 L600,520 L520,480 L500,400 Z" data-name="Bahia"/>
+                        
+                        <!-- REGIÃO CENTRO-OESTE -->
+                        <path id="br-mt" class="state" d="M200,360 L320,340 L380,360 L400,400 L380,480 L300,500 L220,460 L200,400 Z" data-name="Mato Grosso"/>
+                        <path id="br-go" class="state" d="M400,420 L500,400 L520,480 L500,540 L440,560 L400,520 L380,480 Z" data-name="Goiás"/>
+                        <path id="br-df" class="state" d="M480,470 L500,470 L500,490 L480,490 Z" data-name="Distrito Federal"/>
+                        <path id="br-ms" class="state" d="M280,500 L380,480 L400,520 L400,600 L340,640 L280,600 L260,540 Z" data-name="Mato Grosso do Sul"/>
+                        
+                        <!-- REGIÃO SUDESTE -->
+                        <path id="br-mg" class="state" d="M500,480 L600,460 L660,500 L660,580 L600,600 L520,580 L480,540 Z" data-name="Minas Gerais"/>
+                        <path id="br-es" class="state" d="M660,500 L710,510 L710,560 L680,580 L660,560 Z" data-name="Espírito Santo"/>
+                        <path id="br-rj" class="state" d="M600,600 L680,580 L710,600 L680,630 L620,630 Z" data-name="Rio de Janeiro"/>
+                        <path id="br-sp" class="state" d="M400,560 L520,540 L580,580 L600,620 L560,660 L460,660 L400,620 Z" data-name="São Paulo"/>
+                        
+                        <!-- REGIÃO SUL -->
+                        <path id="br-pr" class="state" d="M380,640 L460,620 L520,640 L520,700 L440,720 L380,700 Z" data-name="Paraná"/>
+                        <path id="br-sc" class="state" d="M420,720 L500,710 L520,740 L480,760 L440,750 Z" data-name="Santa Catarina"/>
+                        <path id="br-rs" class="state" d="M380,750 L460,740 L480,770 L440,810 L380,800 L360,770 Z" data-name="Rio Grande do Sul"/>
+                        
+                        <!-- Labels dos estados (opcionais - aparecem no centro de cada path) -->
+                    </svg>
+
+                    <!-- Tooltip que aparece ao clicar em um estado -->
+                    <div class="map-tooltip" id="mapTooltip">
+                        <div class="map-tooltip__header">
+                            <h3 id="tooltipEstado"></h3>
+                            <button class="map-tooltip__close" id="tooltipClose" aria-label="Fechar">&times;</button>
+                        </div>
+                        <div class="map-tooltip__body" id="tooltipBody">
+                            <!-- Conteúdo injetado via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- SEÇÃO DE CONTATO - Cards + Formulário                      -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section class="section-contact" id="contato">
+        <div class="container">
+            <!-- Cards dos executivos -->
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <h3>Milton Serapião</h3>
+                    <h4>Executivo de vendas Brasil</h4>
+                    <p class="contact-card__phone">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <a href="tel:+5511982956026">+55 11 98295-6026</a>
+                    </p>
+                    <p class="contact-card__email">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <a href="mailto:contato@multimin.com.br">contato@multimin.com.br</a>
+                    </p>
+                </div>
+                <div class="contact-card">
+                    <h3>João Victor Teodoro</h3>
+                    <h4>Consultor Técnico</h4>
+                    <p class="contact-card__phone">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <a href="tel:+5564992038521">+55 (64) 99203-8521</a>
+                    </p>
+                    <p class="contact-card__email">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <a href="mailto:contato@multimin.com.br">contato@multimin.com.br</a>
+                    </p>
+                </div>
+                <div class="contact-card">
+                    <h3>Guilherme Santos</h3>
+                    <h4>Consultor Técnico</h4>
+                    <p class="contact-card__phone">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <a href="tel:+5512991251663">+55 (12) 99125-1663</a>
+                    </p>
+                    <p class="contact-card__email">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <a href="mailto:contato@multimin.com.br">contato@multimin.com.br</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Formulário de contato -->
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-row form-row--full">
+                    <input type="text" name="nome" placeholder="Nome *" required>
+                </div>
+                <div class="form-row form-row--half">
+                    <input type="email" name="email" placeholder="E-mail *" required>
+                    <input type="tel" name="telefone" placeholder="Telefone *" required id="inputTelefone">
+                </div>
+                <div class="form-row form-row--half">
+                    <input type="text" name="cidade" placeholder="Cidade *" required>
+                    <input type="text" name="estado" placeholder="Estado *" required>
+                </div>
+                <div class="form-row form-row--full">
+                    <textarea name="mensagem" rows="6" placeholder="Informações Adicionais: *"></textarea>
+                </div>
+                <div class="form-row form-row--submit">
+                    <button type="submit" class="btn-submit" id="btnSubmit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- FOOTER                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__logo">
+                    <!-- PLACEHOLDER: Substituir pelo logo real (usar o mesmo arquivo oficial do header em assets/images/logo-01.svg) -->
+                    <!-- <img src="assets/images/logo.svg" alt="MULTIMIN® 90"> -->
+                    <div class="logo-placeholder logo-placeholder--light">MULTIMIN<sup>®</sup> 90</div>
+                </div>
+                <div class="footer__links">
+                    <h3>Links:</h3>
+                    <ul>
+                        <li><a href="#">Microminerais</a></li>
+                        <li><a href="#">Stress Oxidativo</a></li>
+                        <li><a href="#">Multimin 90 Microminerais Injetáveis</a></li>
+                        <li><a href="#">Momentos que importam</a></li>
+                        <li><a href="#">Testemunhos</a></li>
+                        <li><a href="#">Representantes</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Trabalhos Técnicos</a></li>
+                    </ul>
+                </div>
+                <div class="footer__policies">
+                    <h3>Políticas:</h3>
+                    <ul>
+                        <li><a href="#">Políticas de Privacidade</a></li>
+                        <li><a href="#">Políticas de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p><small>MULTIMIN® 90 Brasil 2026 Todos os direitos reservados.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
