@@ -31,7 +31,7 @@ multimin-project/
 
 ## O que está pendente (marcado como PLACEHOLDER no código)
 - **Imagens da marca**: Logotipos SVG, favicon e imagem de fundo do banner
-- **Mapa SVG detalhado**: O mapa incluído é simplificado. Para produção, substituir pelo SVG real do Brasil (baixar de amcharts.com/svg-maps mantendo os IDs no padrão `br-xx`)
+- **Mapa SVG detalhado**: O mapa atual usa uma silhueta do Brasil com hotspots interativos. Se quiser destacar todos os limites estaduais, substitua pela versão vetorial completa mantendo os IDs no padrão `br-xx`
 - **Endpoint do formulário**: Configurar o serviço de envio (Formspree, EmailJS ou API). Editar a variável `FORM_ENDPOINT` no arquivo `js/main.js`
 - **E-mails dos executivos**: Atualmente com placeholder. Substituir pelos reais
 

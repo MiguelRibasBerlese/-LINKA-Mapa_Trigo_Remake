@@ -447,35 +447,74 @@ ul { list-style: none; }
     height: auto;
 }
 
-/* Estados do mapa */
-.state {
-    fill: var(--color-gray-300);
-    stroke: var(--color-white);
-    stroke-width: 1.5;
-    cursor: default;
-    transition: fill var(--transition-fast), opacity var(--transition-fast), transform var(--transition-fast);
-}
-/* Estados que possuem representantes (classe adicionada via JS) */
-.state--active {
-    fill: var(--color-accent);
-    cursor: pointer;
-}
-.state--active:focus {
-    outline: none;
-    stroke: var(--color-primary);
+.brazil-shape {
+    fill: #e7edf4;
+    stroke: #c7d5e6;
     stroke-width: 3;
 }
-.state--active:hover {
-    fill: var(--color-accent-hover);
-    filter: brightness(1.1);
+
+.brazil-coastline {
+    fill: none;
+    stroke: rgba(40, 64, 124, 0.16);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
-.state--selected {
-    fill: var(--color-accent-hover);
-    stroke: var(--color-gray-900);
-    stroke-width: 2;
+
+.map-hotspot {
+    cursor: pointer;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.map-hotspot__pulse {
+    fill: rgba(218, 41, 28, 0.15);
+    animation: hotspotPulse 2.2s infinite;
+}
+
+.map-hotspot__dot {
+    fill: var(--color-accent);
+    stroke: var(--color-white);
+    stroke-width: 4;
+    transition: fill var(--transition-fast), transform var(--transition-fast), stroke var(--transition-fast);
 }
 .state--hidden {
     opacity: 0.18;
+}
+
+.map-hotspot__label {
+    fill: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    pointer-events: none;
+}
+
+.map-hotspot:hover .map-hotspot__dot,
+.map-hotspot--selected .map-hotspot__dot {
+    fill: var(--color-primary);
+    stroke: rgba(255, 255, 255, 0.95);
+}
+
+.map-hotspot:hover,
+.map-hotspot--selected {
+    transform: scale(1.06);
+}
+
+.map-hotspot:focus {
+    outline: none;
+}
+
+.map-hotspot:focus .map-hotspot__dot {
+    stroke: #9fb3da;
+}
+
+.map-hotspot--hidden {
+    opacity: 0.22;
+}
+
+@keyframes hotspotPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.12); opacity: 0.15; }
 }
 
 .map-legend {

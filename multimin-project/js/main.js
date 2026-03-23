@@ -19,6 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
 // Armazena os dados carregados do JSON para uso em todo o módulo
 let representantesData = [];
 let filteredStateIds = [];
+const STATE_MARKER_POSITIONS = {
+    'br-ac': { x: 83, y: 227 },
+    'br-al': { x: 410, y: 252 },
+    'br-am': { x: 167, y: 151 },
+    'br-ap': { x: 335, y: 77 },
+    'br-ba': { x: 364, y: 300 },
+    'br-ce': { x: 413, y: 176 },
+    'br-df': { x: 296, y: 282 },
+    'br-es': { x: 360, y: 350 },
+    'br-go': { x: 282, y: 298 },
+    'br-ma': { x: 347, y: 191 },
+    'br-mg': { x: 315, y: 337 },
+    'br-ms': { x: 222, y: 351 },
+    'br-mt': { x: 225, y: 272 },
+    'br-pa': { x: 277, y: 152 },
+    'br-pb': { x: 432, y: 206 },
+    'br-pe': { x: 425, y: 226 },
+    'br-pi': { x: 379, y: 205 },
+    'br-pr': { x: 244, y: 418 },
+    'br-rj': { x: 330, y: 374 },
+    'br-rn': { x: 435, y: 185 },
+    'br-ro': { x: 135, y: 253 },
+    'br-rr': { x: 203, y: 77 },
+    'br-rs': { x: 232, y: 500 },
+    'br-sc': { x: 252, y: 463 },
+    'br-se': { x: 405, y: 275 },
+    'br-sp': { x: 271, y: 387 },
+    'br-to': { x: 284, y: 235 }
+};
 
 async function initMap() {
     // Carrega os dados dos representantes do arquivo JSON externo.
@@ -37,14 +66,15 @@ async function initMap() {
     }
 
     // Identifica quais estados possuem dados e marca como "ativos" (clicáveis)
+    renderMapHotspots(representantesData);
+
     const stateIds = representantesData.map(item => item.id);
     filteredStateIds = [...stateIds];
-    const allStates = document.querySelectorAll('.state');
+    const allStates = document.querySelectorAll('.map-hotspot');
 
     allStates.forEach(state => {
-        const stateId = state.id;
+        const stateId = state.dataset.stateId;
         if (stateIds.includes(stateId)) {
-            state.classList.add('state--active');
             state.setAttribute('role', 'button');
             state.setAttribute('tabindex', '0');
             state.setAttribute('aria-label', `Ver representantes de ${state.dataset.name}`);
@@ -89,16 +119,16 @@ function handleStateSelection(stateId) {
 }
 
 function setSelectedState(stateId) {
-    document.querySelectorAll('.state--selected').forEach(el => {
-        el.classList.remove('state--selected');
+    document.querySelectorAll('.map-hotspot--selected').forEach(el => {
+        el.classList.remove('map-hotspot--selected');
     });
     document.querySelectorAll('.map-state-list__button--selected').forEach(button => {
         button.classList.remove('map-state-list__button--selected');
     });
 
-    const currentState = document.getElementById(stateId);
+    const currentState = document.querySelector(`[data-state-id="${stateId}"]`);
     const currentButton = document.querySelector(`[data-state-button="${stateId}"]`);
-    if (currentState) currentState.classList.add('state--selected');
+    if (currentState) currentState.classList.add('map-hotspot--selected');
     if (currentButton) currentButton.classList.add('map-state-list__button--selected');
 }
 
@@ -157,7 +187,7 @@ function initMapSearch() {
             return;
         }
 
-        const hasSelectedVisibleState = document.querySelector('.state--selected:not(.state--hidden)');
+        const hasSelectedVisibleState = document.querySelector('.map-hotspot--selected:not(.map-hotspot--hidden)');
         if (!hasSelectedVisibleState) {
             resetMapSelection();
         }
@@ -165,10 +195,10 @@ function initMapSearch() {
 }
 
 function updateMapVisibility(visibleStateIds) {
-    document.querySelectorAll('.state').forEach(state => {
-        const isActive = representantesData.some(item => item.id === state.id);
-        const isVisible = visibleStateIds.includes(state.id);
-        state.classList.toggle('state--hidden', isActive && !isVisible);
+    document.querySelectorAll('.map-hotspot').forEach(state => {
+        const isActive = representantesData.some(item => item.id === state.dataset.stateId);
+        const isVisible = visibleStateIds.includes(state.dataset.stateId);
+        state.classList.toggle('map-hotspot--hidden', isActive && !isVisible);
     });
 }
 
@@ -178,6 +208,31 @@ function normalizeText(value) {
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
         .trim();
+}
+
+function renderMapHotspots(data) {
+    const hotspotGroup = document.getElementById('mapHotspots');
+    if (!hotspotGroup) return;
+
+    hotspotGroup.innerHTML = data.map(item => {
+        const position = STATE_MARKER_POSITIONS[item.id];
+        if (!position) return '';
+
+        const shortName = item.estado
+            .split(' ')
+            .map(word => word[0])
+            .join('')
+            .slice(0, 2)
+            .toUpperCase();
+
+        return `
+            <g class="map-hotspot" data-state-id="${item.id}" data-name="${item.estado}" transform="translate(${position.x} ${position.y})">
+                <circle class="map-hotspot__pulse" r="18"></circle>
+                <circle class="map-hotspot__dot" r="12"></circle>
+                <text class="map-hotspot__label" y="4" text-anchor="middle">${shortName}</text>
+            </g>
+        `;
+    }).join('');
 }
 
 // Dados de fallback caso o JSON externo não carregue

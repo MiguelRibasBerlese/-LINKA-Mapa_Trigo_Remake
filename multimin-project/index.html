@@ -147,46 +147,13 @@
                         </div>
 
                         <div class="map-container" id="mapContainer">
-                            <!-- SVG inline do Brasil - mapa simplificado com IDs por estado -->
-                            <svg id="brazilMap" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" aria-labelledby="mapTitle mapDescription" role="img">
+                            <!-- Silhueta do Brasil + pontos interativos posicionados via JavaScript -->
+                            <svg id="brazilMap" viewBox="0 0 500 560" xmlns="http://www.w3.org/2000/svg" aria-labelledby="mapTitle mapDescription" role="img" preserveAspectRatio="xMidYMid meet">
                                 <title id="mapTitle">Mapa interativo do Brasil</title>
                                 <desc id="mapDescription">Selecione um estado destacado para ver a lista de representantes e contatos.</desc>
-                                <!-- REGIÃO NORTE -->
-                                <path id="br-am" class="state" d="M120,120 L280,100 L300,140 L320,200 L280,280 L200,300 L140,260 L100,200 Z" data-name="Amazonas"/>
-                                <path id="br-pa" class="state" d="M300,140 L440,120 L480,180 L460,260 L400,300 L320,280 L280,280 L320,200 Z" data-name="Pará"/>
-                                <path id="br-ac" class="state" d="M60,220 L140,200 L140,260 L100,280 L60,260 Z" data-name="Acre"/>
-                                <path id="br-ro" class="state" d="M140,260 L200,300 L200,360 L160,380 L120,340 L100,280 Z" data-name="Rondônia"/>
-                                <path id="br-rr" class="state" d="M200,40 L260,60 L280,100 L240,120 L200,100 Z" data-name="Roraima"/>
-                                <path id="br-ap" class="state" d="M360,40 L400,60 L420,100 L400,120 L360,100 Z" data-name="Amapá"/>
-                                <path id="br-to" class="state" d="M400,300 L460,260 L480,320 L480,420 L440,440 L400,400 Z" data-name="Tocantins"/>
-                                
-                                <!-- REGIÃO NORDESTE -->
-                                <path id="br-ma" class="state" d="M460,180 L540,160 L580,200 L560,280 L500,300 L460,260 Z" data-name="Maranhão"/>
-                                <path id="br-pi" class="state" d="M540,240 L580,200 L620,240 L620,340 L560,360 L540,300 Z" data-name="Piauí"/>
-                                <path id="br-ce" class="state" d="M620,180 L680,180 L700,220 L680,280 L640,280 L620,240 Z" data-name="Ceará"/>
-                                <path id="br-rn" class="state" d="M700,200 L740,200 L750,230 L720,250 L700,240 Z" data-name="Rio Grande do Norte"/>
-                                <path id="br-pb" class="state" d="M690,260 L740,250 L750,280 L720,290 L690,280 Z" data-name="Paraíba"/>
-                                <path id="br-pe" class="state" d="M670,290 L740,290 L750,320 L720,330 L660,320 Z" data-name="Pernambuco"/>
-                                <path id="br-al" class="state" d="M700,330 L740,330 L750,360 L720,360 Z" data-name="Alagoas"/>
-                                <path id="br-se" class="state" d="M690,360 L720,360 L720,390 L690,380 Z" data-name="Sergipe"/>
-                                <path id="br-ba" class="state" d="M560,340 L660,320 L690,380 L680,480 L600,520 L520,480 L500,400 Z" data-name="Bahia"/>
-                                
-                                <!-- REGIÃO CENTRO-OESTE -->
-                                <path id="br-mt" class="state" d="M200,360 L320,340 L380,360 L400,400 L380,480 L300,500 L220,460 L200,400 Z" data-name="Mato Grosso"/>
-                                <path id="br-go" class="state" d="M400,420 L500,400 L520,480 L500,540 L440,560 L400,520 L380,480 Z" data-name="Goiás"/>
-                                <path id="br-df" class="state" d="M480,470 L500,470 L500,490 L480,490 Z" data-name="Distrito Federal"/>
-                                <path id="br-ms" class="state" d="M280,500 L380,480 L400,520 L400,600 L340,640 L280,600 L260,540 Z" data-name="Mato Grosso do Sul"/>
-                                
-                                <!-- REGIÃO SUDESTE -->
-                                <path id="br-mg" class="state" d="M500,480 L600,460 L660,500 L660,580 L600,600 L520,580 L480,540 Z" data-name="Minas Gerais"/>
-                                <path id="br-es" class="state" d="M660,500 L710,510 L710,560 L680,580 L660,560 Z" data-name="Espírito Santo"/>
-                                <path id="br-rj" class="state" d="M600,600 L680,580 L710,600 L680,630 L620,630 Z" data-name="Rio de Janeiro"/>
-                                <path id="br-sp" class="state" d="M400,560 L520,540 L580,580 L600,620 L560,660 L460,660 L400,620 Z" data-name="São Paulo"/>
-                                
-                                <!-- REGIÃO SUL -->
-                                <path id="br-pr" class="state" d="M380,640 L460,620 L520,640 L520,700 L440,720 L380,700 Z" data-name="Paraná"/>
-                                <path id="br-sc" class="state" d="M420,720 L500,710 L520,740 L480,760 L440,750 Z" data-name="Santa Catarina"/>
-                                <path id="br-rs" class="state" d="M380,750 L460,740 L480,770 L440,810 L380,800 L360,770 Z" data-name="Rio Grande do Sul"/>
+                                <path class="brazil-shape" d="M139 55l53 8 54-20 48 9 27 35 38 7 28 34-23 23 12 25-15 31-39 20 18 36-15 29 16 39-23 22 12 39-23 22-8 44-19 31-32 10-23 33-21-4-18-36-17 12-31-16-17-43-32-16-22-40-46-44-7-37 16-26-3-31 15-32-8-53 26-30 44-20 16-32 32-5 26-33z"/>
+                                <path class="brazil-coastline" d="M350 68l20 18 16 6 31 31-23 27 10 24-15 31-36 18 17 37-16 28 17 39-22 21 10 38-22 24-9 44-19 31-32 10-23 33-9-2" />
+                                <g id="mapHotspots"></g>
                             </svg>
                         </div>
 
