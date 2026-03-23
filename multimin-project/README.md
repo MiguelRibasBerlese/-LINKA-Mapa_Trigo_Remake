@@ -35,6 +35,12 @@ multimin-project/
 - **Endpoint do formulário**: Configurar o serviço de envio (Formspree, EmailJS ou API). Editar a variável `FORM_ENDPOINT` no arquivo `js/main.js`
 - **E-mails dos executivos**: Atualmente com placeholder. Substituir pelos reais
 
+## Melhorias já incluídas no mapa
+- Busca por **estado, cidade ou representante**
+- Painel lateral com **atalhos rápidos** para os estados ativos
+- Contadores automáticos de **estados ativos** e **representantes cadastrados**
+- Navegação por teclado nos estados destacados
+
 ## Como atualizar representantes
 Edite o arquivo `data/representantes.json`. O formato é auto-explicativo:
 ```json
