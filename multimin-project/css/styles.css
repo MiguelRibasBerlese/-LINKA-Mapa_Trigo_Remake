@@ -477,6 +477,9 @@ ul { list-style: none; }
     stroke-width: 4;
     transition: fill var(--transition-fast), transform var(--transition-fast), stroke var(--transition-fast);
 }
+.state--hidden {
+    opacity: 0.18;
+}
 
 .map-hotspot__label {
     fill: var(--color-white);
