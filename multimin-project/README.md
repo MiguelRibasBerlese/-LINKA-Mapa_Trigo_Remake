@@ -31,9 +31,15 @@ multimin-project/
 
 ## O que está pendente (marcado como PLACEHOLDER no código)
 - **Imagens da marca**: Logotipos SVG, favicon e imagem de fundo do banner
-- **Mapa SVG detalhado**: O mapa incluído é simplificado. Para produção, substituir pelo SVG real do Brasil (baixar de amcharts.com/svg-maps mantendo os IDs no padrão `br-xx`)
+- **Mapa SVG detalhado**: O mapa atual usa uma silhueta do Brasil com hotspots interativos. Se quiser destacar todos os limites estaduais, substitua pela versão vetorial completa mantendo os IDs no padrão `br-xx`
 - **Endpoint do formulário**: Configurar o serviço de envio (Formspree, EmailJS ou API). Editar a variável `FORM_ENDPOINT` no arquivo `js/main.js`
 - **E-mails dos executivos**: Atualmente com placeholder. Substituir pelos reais
+
+## Melhorias já incluídas no mapa
+- Busca por **estado, cidade ou representante**
+- Painel lateral com **atalhos rápidos** para os estados ativos
+- Contadores automáticos de **estados ativos** e **representantes cadastrados**
+- Navegação por teclado nos estados destacados
 
 ## Como atualizar representantes
 Edite o arquivo `data/representantes.json`. O formato é auto-explicativo:
